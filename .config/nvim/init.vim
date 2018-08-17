@@ -82,3 +82,5 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 let g:NERDSpaceDelims = 1
 
+
+let g:airline#extensions#tabline#enabled = 1

@@ -27,9 +27,6 @@ dnf -y install tlp          \
 
 
 
-dnf -y install chromium
-
-
 ################################################################################
 #                                                                              #
 #                                Authentication                                #
@@ -79,4 +76,5 @@ sudo -u $USER curl -fLo /home/$USER/.local/share/nvim/site/autoload/plug.vim\
 dnf -y install i3 \
                xbacklight
 
-
+# xbacklight setup
+cat files/xorg.conf >> /etc/X11/xorg.conf

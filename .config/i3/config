@@ -130,14 +130,15 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec amixer set Master 1+ toggle # mute sound
-bindsym XF86AudioMicMute exec amixer set Capture toggle # mute mic
+
+set $sink `pactl list short sinks | grep RUNNING | cut -f1`
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # screen brightness controls
-bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
