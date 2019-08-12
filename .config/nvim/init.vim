@@ -81,8 +81,8 @@ set cursorline
 hi clear CursorLine
 hi CursorLine gui=bold cterm=bold
 
-highlight IncSearch ctermbg=None ctermfg=None term=underline
-highlight Search ctermbg=None ctermfg=None term=underline
+highlight IncSearch ctermbg=None ctermfg=None cterm=bold,underline
+highlight Search ctermbg=None ctermfg=None cterm=bold,underline
 
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
