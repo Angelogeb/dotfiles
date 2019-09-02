@@ -18,6 +18,7 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "tztime local"
+order += "tztime home"
 
 wireless _first_ {
         format_up = ": (%quality at %essid) %ip"
@@ -36,10 +37,17 @@ ipv6 {
 
 battery all {
         format = " %status %percentage %remaining"
+        threshold_type = "percentage"
+        low_threshold = 20
 }
 
 tztime local {
-        format = " IN: %Y-%m-%d %H:%M:%S"
+        format = " IN: %Y-%m-%d %H:%M"
+}
+
+tztime home {
+        format = " IT: %Y-%m-%d %H:%M"
+        timezone = "Europe/Rome"
 }
 
 load {

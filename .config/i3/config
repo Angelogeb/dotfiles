@@ -176,8 +176,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+  mode hide
 	position top
-	font pango:DejaVu Sans Mono, FontAwesome 8
+	font pango:DejaVu Sans Mono, FontAwesome 10
 	status_command i3status
 
 	colors {
@@ -208,6 +209,10 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
+bindsym $mod+x exec --no-startup-id i3lock -cff777a
+
+bindsym --release Print exec "flameshot gui -r -p ~/Screens/"
 
 
 # exec --no-startup-id "polybar example"
